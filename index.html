@@ -20,11 +20,22 @@
         }
         .photo-box img { width: 100%; height: auto; max-width: 400px; border: 2px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.8); transition: 0.4s; }
         .photo-box:hover img { transform: scale(1.02); border-color: #d4af37; }
-        .btn { background: transparent; color: #d4af37; padding: 18px 50px; border: 1px solid #d4af37; cursor: pointer; letter-spacing: 4px; text-transform: uppercase; margin-top: 20px; }
+        
+        .btn { background: transparent; color: #d4af37; padding: 18px 50px; border: 1px solid #d4af37; cursor: pointer; letter-spacing: 4px; text-transform: uppercase; margin-top: 20px; transition: 0.4s; }
         .btn:hover { background: #d4af37; color: #000; }
+        
+        .download-btn { font-size: 0.8rem; padding: 10px 20px; margin-top: 40px; opacity: 0.7; border-color: #666; color: #999; }
+        .download-btn:hover { opacity: 1; color: #d4af37; border-color: #d4af37; }
+
         .reveal { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
         footer { padding: 60px; opacity: 0.4; font-size: 0.8rem; letter-spacing: 3px; }
+
+        @media print {
+            .btn, .download-btn, audio { display: none !important; }
+            body { background-color: white !important; color: black !important; }
+            .photo-box img { border: 1px solid black !important; }
+        }
     </style>
 </head>
 <body>
@@ -65,12 +76,14 @@
 
 <div class="message-section reveal">
     <h2 style="font-family: 'Dancing Script'; font-size: 3rem; color: #d4af37;">To My Muse</h2>
-    <div class="message-content" style="max-width: 750px; margin: 0 auto; line-height: 2.2; font-size: 1.3rem; color: #ccc; padding: 0 20px;">
+    <div class="message-content">
         Watching you is like watching a classic movie—timeless and breathtaking. 
         You aren't just a part of my life; you are the best part of it. 
         Thank you for being my muse and my best friend.
         <br><br>
         <strong style="color: #fff;">Happy Birthday, Beautiful! <br> With all my love, Naresh</strong>
+        <br>
+        <button class="btn download-btn" onclick="window.print()">Save this memory as PDF ✨</button>
     </div>
 </div>
 

@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,14 +7,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <style>
-        body { margin: 0; background-color: #0a0a0a; color: #ffffff; font-family: 'Playfair Display', serif; text-align: center; }
-        header { padding: 80px 20px; border-bottom: 1px solid #333; }
-        h1 { font-family: 'Dancing Script', cursive; font-size: 3.5rem; color: #d4af37; margin: 0; }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 40px 20px; }
-        .photo-box img { width: 100%; height: auto; border: 1px solid #d4af37; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-        .caption { font-family: 'Dancing Script', cursive; color: #d4af37; margin-bottom: 10px; font-size: 1.2rem; }
-        .btn { background: transparent; color: #d4af37; padding: 15px 30px; border: 1px solid #d4af37; cursor: pointer; letter-spacing: 2px; }
-        .reveal { opacity: 0; transform: translateY(20px); transition: 1s all ease; }
+        body { 
+            margin: 0; padding: 0; 
+            background-color: #0a0a0a; 
+            color: #ffffff; 
+            font-family: 'Playfair Display', serif; 
+            text-align: center; overflow-x: hidden;
+        }
+
+        header { 
+            padding: 100px 20px; 
+            background: linear-gradient(to bottom, #1a1a1a, #0a0a0a);
+            border-bottom: 1px solid #333;
+        }
+
+        h1 { font-family: 'Dancing Script', cursive; font-size: 4rem; color: #d4af37; margin: 0; }
+        .quote { font-style: italic; color: #999; margin-top: 15px; font-size: 1.2rem; letter-spacing: 1px; }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px; padding: 60px 20px; max-width: 1400px; margin: 0 auto;
+        }
+
+        .photo-box { display: flex; flex-direction: column; align-items: center; }
+        
+        .caption-above {
+            font-family: 'Dancing Script', cursive; font-size: 1.4rem;
+            color: #d4af37; margin-bottom: 18px; min-height: 50px;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .photo-box img {
+            width: 100%; height: auto; max-width: 400px;
+            border: 2px solid #333; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            transition: 0.4s ease;
+        }
+        
+        .photo-box:hover img { transform: scale(1.02); border-color: #d4af37; }
+
+        .message-section { padding: 100px 20px; background: #000; border-top: 1px solid #1a1a1a; }
+        .message-content { max-width: 750px; margin: 0 auto; line-height: 2.2; font-size: 1.3rem; color: #ccc; }
+
+        .btn {
+            background: transparent; color: #d4af37; padding: 18px 50px;
+            border: 1px solid #d4af37; cursor: pointer;
+            font-size: 1rem; letter-spacing: 4px; transition: 0.4s;
+            text-transform: uppercase; margin-top: 20px;
+        }
+        .btn:hover { background: #d4af37; color: #000; }
+
+        footer { padding: 60px; opacity: 0.4; font-size: 0.8rem; letter-spacing: 3px; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
@@ -27,36 +73,72 @@
 <header>
     <div class="reveal">
         <h1>Pratima</h1>
-        <p>"Will you still love me when I'm no longer young and beautiful?"</p>
+        <p class="quote">"Will you still love me when I'm no longer young and beautiful?"</p>
         <button class="btn" onclick="celebrate()">Enter the Cinema 🎵</button>
     </div>
 </header>
 
 <div class="gallery" id="main-gallery">
-    <div class="photo-box reveal"><div class="caption">"Young and Beautiful"</div><img src="IMG_20260120_101804.png"></div>
-    <div class="photo-box reveal"><div class="caption">"Stars in your eyes"</div><img src="IMG_20260120_101742.png"></div>
-    <div class="photo-box reveal"><div class="caption">"Diamond soul"</div><img src="IMG_20260120_101709.png"></div>
-    <div class="photo-box reveal"><div class="caption">"Golden days"</div><img src="IMG_20260120_101648.png"></div>
-    <div class="photo-box reveal"><div class="caption">"Love you forever"</div><img src="IMG-20260120-WA0080.jpg"></div>
-    <div class="photo-box reveal"><div class="caption">"Summertime"</div><img src="IMG-20260120-WA0076.jpg"></div>
-    <div class="photo-box reveal"><div class="caption">"Butterfly"</div><img src="IMG_20260120_095330.png"></div>
-    <div class="photo-box reveal"><div class="caption">"The Muse"</div><img src="IMG-20260120-WA0008.jpg"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Young and Beautiful"</div><img src="IMG_20260120_101804.png"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Stars in your eyes"</div><img src="IMG_20260120_101742.png"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Diamond soul"</div><img src="IMG_20260120_101709.png"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Golden days"</div><img src="IMG_20260120_101648.png"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Everything I do for you"</div><img src="IMG-20260120-WA0080.jpg"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Summertime Sadness"</div><img src="IMG-20260120-WA0076.jpg"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Happiness is a butterfly"</div><img src="IMG_20260120_095330.png"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Pure Gold"</div><img src="IMG-20260120-WA0000.jpg"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Classic Heart"</div><img src="IMG-20260120-WA0003.jpg"></div>
+    <div class="photo-box reveal"><div class="caption-above">"The Muse"</div><img src="IMG-20260120-WA0008.jpg"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Vintage Dream"</div><img src="IMG-20260120-WA0007.jpg"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Timeless"</div><img src="IMG-20260120-WA0010.jpg"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Blue Hydrangeas"</div><img src="IMG-20260114-WA0031.jpg"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Our Era"</div><img src="IMG-20260107-WA0080.jpg"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Rooted in my soul"</div><img src="IMG-20260114-WA0028.jpg"></div>
+    <div class="photo-box reveal"><div class="caption-above">"A Cinematic Dream"</div><img src="IMG-20260114-WA0023.jpg"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Soul of the party"</div><img src="IMG-20251217-WA0001(1).jpg"></div>
+    <div class="photo-box reveal"><div class="caption-above">"The Flame"</div><img src="IMG-20260114-WA0013.jpg"></div>
+    <div class="photo-box reveal"><div class="caption-above">"Forever Beautiful"</div><img src="IMG-20260114-WA0009.jpg"></div>
 </div>
 
-<footer>LANA CORE — 2026</footer>
+<div class="message-section reveal">
+    <h2 style="font-family: 'Dancing Script'; font-size: 3rem; color: #d4af37;">To My Muse</h2>
+    <div class="message-content">
+        Watching you is like watching a classic movie—timeless and breathtaking. 
+        You aren't just a part of my life; you are the best part of it. 
+        Thank you for being my muse and my best friend.
+        <br><br>
+        <strong style="color: #fff;">Happy Birthday, Beautiful! <br> With all my love, Naresh</strong>
+    </div>
+</div>
+
+<footer>LANA CORE AESTHETIC — 2026 — FOR PRATIMA</footer>
 
 <script>
     function celebrate() {
         document.getElementById('lanaSong').play();
-        confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 }, colors: ['#d4af37', '#ffffff'] });
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#d4af37', '#ffffff']
+        });
         document.getElementById('main-gallery').scrollIntoView({ behavior: 'smooth' });
     }
-    window.addEventListener('scroll', () => {
-        document.querySelectorAll('.reveal').forEach(el => {
-            if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
-        });
-    });
+
+    window.addEventListener('scroll', reveal);
+    function reveal() {
+        var reveals = document.querySelectorAll('.reveal');
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var revealTop = reveals[i].getBoundingClientRect().top;
+            if (revealTop < windowHeight - 150) {
+                reveals[i].classList.add('active');
+            }
+        }
+    }
+    reveal();
 </script>
 
 </body>
-</html>
+                                      </html>
+    

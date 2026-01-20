@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratima: A Cinematic Dream ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        body { 
+            margin: 0; padding: 0; 
+            background-color: #0a0a0a; /* Deep Black */
+            color: #ffffff; 
+            font-family: 'Playfair Display', serif; 
+            text-align: center; overflow-x: hidden;
+        }
+
+        header { 
+            padding: 100px 20px; 
+            background: linear-gradient(to bottom, #1a1a1a, #0a0a0a);
+            border-bottom: 1px solid #333;
+        }
+
+        h1 { font-family: 'Dancing Script', cursive; font-size: 4rem; color: #d4af37; margin: 0; } /* Gold Title */
+        .quote { font-style: italic; color: #999; margin-top: 15px; font-size: 1.2rem; letter-spacing: 1px; }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 60px; padding: 80px 20px; max-width: 1400px; margin: 0 auto;
+        }
+
+        .photo-box { 
+            display: flex; flex-direction: column; align-items: center;
+        }
+        
+        /* Poetic Captions Above Photos */
+        .caption-above {
+            font-family: 'Dancing Script', cursive; font-size: 1.4rem;
+            color: #d4af37; margin-bottom: 18px; min-height: 60px;
+            display: flex; align-items: center; justify-content: center;
+            padding: 0 15px; line-height: 1.4;
+        }
+
+        .photo-box img {
+            width: 100%; height: 450px; object-fit: cover;
+            border: 2px solid #333; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            transition: transform 0.4s ease, border-color 0.4s ease;
+        }
+        
+        .photo-box:hover img {
+            transform: scale(1.02);
+            border-color: #d4af37; /* Gold border on hover */
+        }
+
+        .message-section { 
+            padding: 100px 20px; 
+            background: #000; 
+            border-top: 1px solid #1a1a1a;
+        }
+        
+        .message-content { 
+            max-width: 750px; margin: 0 auto; line-height: 2.2; 
+            font-size: 1.3rem; color: #ccc;
+        }
+
+        .btn {
+            background: transparent; color: #d4af37; padding: 18px 50px;
+            border: 1px solid #d4af37; border-radius: 0; cursor: pointer;
+            font-size: 1rem; font-family: 'Playfair Display';
+            letter-spacing: 4px; transition: 0.4s; margin-top: 30px;
+            text-transform: uppercase;
+        }
+        .btn:hover { background: #d4af37; color: #000; }
+
+        footer { padding: 80px; opacity: 0.4; font-size: 0.8rem; letter-spacing: 3px; }
+
+        /* Animation for fade in */
+        .reveal { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<audio id="lanaSong" loop>
+    <source src="https://files.catbox.moe/7ynnv6.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+    <div class="reveal">
+        <h1>Pratima</h1>
+        <p class="quote">"Will you still love me when I'm no longer young and beautiful?"</p>
+        <button class="btn" onclick="celebrate()">Enter the Cinema 🎵</button>
+    </div>
+</header>
+
+<div class="gallery" id="main-gallery">
+    <div class="photo-box reveal">
+        <div class="caption-above">"Will you still love me when I'm no longer young and beautiful?"</div>
+        <img src="https://i.ibb.co/sXzqXmh/IMG-20260120-101804.png">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"The stars in your eyes... they shine like diamonds."</div>
+        <img src="https://i.ibb.co/HDzr9cfR/IMG-20260120-101742.png">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"I know that you will. I know that you will."</div>
+        <img src="https://i.ibb.co/bM0St3L8/IMG-20260120-101709.png">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"You make me shine like gold."</div>
+        <img src="https://i.ibb.co/xSW47LNZ/IMG-20260120-101648.png">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"Everything I do, I do for you."</div>
+        <img src="https://i.ibb.co/LDC3kqgj/IMG-20260120-WA0080.jpg">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"Kiss me hard before you go... summertime sadness."</div>
+        <img src="https://i.ibb.co/4Z4PN8vR/IMG-20260120-WA0076.jpg">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"Happiness is a butterfly, and you caught it."</div>
+        <img src="https://i.ibb.co/23X4V9R7/IMG-20260120-095330.png">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"Our era is golden, and your heart is a masterpiece."</div>
+        <img src="https://i.ibb.co/cK5txhBL/IMG-20260120-WA0008.jpg">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"You make the whole world feel like a beautiful vintage movie."</div>
+        <img src="https://i.ibb.co/svLqkdpm/IMG-20260120-WA0010.jpg">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"Blue hydrangea... none of it compares to you."</div>
+        <img src="https://i.ibb.co/CpHkhG53/IMG-20260114-WA0031.jpg">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"They say the world was built for two... it was only ever built for us."</div>
+        <img src="https://i.ibb.co/MkVZQH4k/IMG-20260107-WA0080.jpg">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"To my dearest Willow: rooted in my soul."</div>
+        <img src="https://i.ibb.co/p6dmJfqN/IMG-20260114-WA0028.jpg">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"Life is beautiful, but you don't have a clue how much."</div>
+        <img src="https://i.ibb.co/tTnDNCmS/IMG-20260114-WA0023.jpg">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"Honey, you’re the soul of the party."</div>
+        <img src="https://i.ibb.co/ch2wvzkH/IMG-20251217-WA0001-1.jpg">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"He’s got the fire, and he walks with it... but you are the flame."</div>
+        <img src="https://i.ibb.co/330VTtK/IMG-20260114-WA0013.jpg">
+    </div>
+    <div class="photo-box reveal">
+        <div class="caption-above">"Happy Birthday, Pratima. You are my cinematic dream come true."</div>
+        <img src="https://i.ibb.co/h1dp9QcZ/IMG-20260114-WA0009.jpg">
+    </div>
+</div>
+
+<div class="message-section reveal">
+    <h2 style="font-family: 'Dancing Script'; font-size: 3rem; color: #d4af37; margin-bottom: 30px;">To My Muse</h2>
+    <div class="message-content">
+        Watching you is like watching a classic movie—timeless and breathtaking. 
+        You aren't just a part of my life; you are the best part of it. 
+        Thank you for being my muse and my best friend.
+        <br><br>
+        <strong style="color: #fff;">Happy Birthday, Beautiful! <br> With all my love, Naresh</strong>
+    </div>
+</div>
+
+
+<footer>LANA CORE AESTHETIC — 2026 — FOR PRATIMA</footer>
+
+<script>
+    function celebrate() {
+        // Play Music
+        const music = document.getElementById('lanaSong');
+        music.play();
+
+        // Confetti (Gold/White for Black theme)
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#d4af37', '#ffffff', '#333333']
+        });
+
+        // Scroll to Gallery
+        document.getElementById('main-gallery').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Reveal animation logic
+    window.addEventListener('scroll', reveal);
+    function reveal() {
+        var reveals = document.querySelectorAll('.reveal');
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var revealTop = reveals[i].getBoundingClientRect().top;
+            var revealPoint = 150;
+            if (revealTop < windowHeight - revealPoint) {
+                reveals[i].classList.add('active');
+            }
+        }
+    }
+    // Run once on load
+    reveal();
+</script>
+
+</body>
+</html>
